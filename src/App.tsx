@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { CarsType, TaskMap } from './tasks/task_01_map/TaskMap';
+import { TaskButton } from './tasks/task_02_button/TaskButton';
 
 function App() {
 	const topCars: CarsType[] = [
@@ -12,6 +13,7 @@ function App() {
 		<div>
 			<h1 className='page-title'>Micro-tasks</h1>
 			<TaskMap top={topCars} />
+			<TaskButton />
 		</div>
 	);
 }
