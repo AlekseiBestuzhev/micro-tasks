@@ -1,4 +1,5 @@
 import React from 'react';
+import cls from './TaskMap.module.css';
 
 type CarsType = {
 	manufacturer: string,
@@ -23,7 +24,7 @@ export function TaskMap() {
 	return (
 		<>
 			<h2>Task 01. Map</h2>
-			<table>
+			<table className={cls.table} border={1}>
 				<tr>
 					<th>№</th>
 					<th>Name</th>
