@@ -24,12 +24,14 @@ export function TaskMap(props: TaskType) {
 		<>
 			<h2>Task 01. Map</h2>
 			<table className={cls.table} border={1}>
-				<tr>
-					<th>№</th>
-					<th>Name</th>
-					<th>Model</th>
-				</tr>
-				{taskItem}
+				<tbody>
+					<tr>
+						<th>№</th>
+						<th>Name</th>
+						<th>Model</th>
+					</tr>
+					{taskItem}
+				</tbody>
 			</table>
 		</>
 	);
