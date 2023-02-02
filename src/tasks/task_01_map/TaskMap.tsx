@@ -1,18 +1,17 @@
 import React from 'react';
 import cls from './TaskMap.module.css';
 
-type CarsType = {
+export type CarsType = {
 	manufacturer: string,
 	model: string
 }
 
-export function TaskMap() {
-	const topCars: CarsType[] = [
-		{ manufacturer: 'BMW', model: 'm5cs' },
-		{ manufacturer: 'Mercedes', model: 'e63s' },
-		{ manufacturer: 'Audi', model: 'rs6' }
-	];
-	const taskItem: JSX.Element | JSX.Element[] = topCars.map((elem, index) => {
+type TaskType = {
+	top: CarsType[]
+}
+
+export function TaskMap(props: TaskType) {
+	const taskItem: JSX.Element | JSX.Element[] = props.top.map((elem, index) => {
 		return (
 			<tr key={index}>
 				<td>{index + 1}</td>
