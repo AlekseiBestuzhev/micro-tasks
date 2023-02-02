@@ -21,7 +21,7 @@ export function TaskMap(props: TaskType) {
 		)
 	});
 	return (
-		<>
+		<div className='task'>
 			<h2>Task 01. Map</h2>
 			<table className={cls.table} border={1}>
 				<tbody>
@@ -33,6 +33,6 @@ export function TaskMap(props: TaskType) {
 					{taskItem}
 				</tbody>
 			</table>
-		</>
+		</div>
 	);
 }
