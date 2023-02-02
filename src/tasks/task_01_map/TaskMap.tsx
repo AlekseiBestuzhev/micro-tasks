@@ -14,7 +14,7 @@ export function TaskMap() {
 	];
 	const taskItem: JSX.Element | JSX.Element[] = topCars.map((elem, index) => {
 		return (
-			<tr>
+			<tr key={index}>
 				<td>{index + 1}</td>
 				<td>{elem.manufacturer}</td>
 				<td>{elem.model}</td>
