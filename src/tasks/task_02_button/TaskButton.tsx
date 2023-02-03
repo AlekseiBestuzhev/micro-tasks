@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonFir } from '../../components/ButtonFir';
 import '../../App.css';
+import { Counter } from '../../components/Counter';
 
 export const TaskButton = () => {
 	const funcHend1 = (nth: string) => {
@@ -14,6 +15,7 @@ export const TaskButton = () => {
 			<h2 className='task'>Task 02. Button</h2>
 			<ButtonFir name='First Button' callBack={() => funcHend1('First')} />
 			<ButtonFir name='Second Button' callBack={() => funcHend2('Second')} />
+			<Counter />
 		</div>
 	);
 }
