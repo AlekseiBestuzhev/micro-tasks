@@ -11,12 +11,12 @@ export const TaskFilter = () => {
 		{ banknots: 'Dollars', value: 50, number: ' x1234567890' },
 		{ banknots: 'RUBLS', value: 50, number: ' v1234567890' },
 	]);
-
+	const filteredMoney = money.filter(elem => elem.banknots === 'RUBLS');
 	return (
 		<div>
 			<h2 className='task'>Task 03. Filter</h2>
 			<ul>
-				{money.map((elem, index) => {
+				{filteredMoney.map((elem, index) => {
 					return (
 						<li key={index}>
 							<span>{elem.banknots} </span>
