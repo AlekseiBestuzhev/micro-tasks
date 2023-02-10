@@ -5,7 +5,6 @@ type InputType = {
 }
 
 export const FullInput: FC<InputType> = (props): JSX.Element => {
-	const [title, setTitle] = useState('');
 
 	return (
 		<input />
