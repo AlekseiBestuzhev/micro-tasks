@@ -14,9 +14,9 @@ function App() {
 	return (
 		<div>
 			<h1 className='page-title'>Micro-tasks</h1>
-			<TaskMap top={topCars} />
+			{/* <TaskMap top={topCars} />
 			<TaskButton />
-			<TaskFilter />
+			<TaskFilter /> */}
 			<TaskInput />
 		</div>
 	);
