@@ -17,12 +17,14 @@ export const TaskInput = () => {
 			<div key={index}>{elem.message}</div>
 		)
 	})
+
+	const [title, setTitle] = useState('');
 	return (
 		<div>
 			<h2 className='task'>Task 04. Input</h2>
 			{/* <FullInput addMessage={addMessage} /> */}
-			<InputC />
-			<ButtonC />
+			<InputC setTitle={setTitle} title={title} />
+			<ButtonC name='+' callback={() => { }} />
 			{messageRender}
 		</div>
 	);

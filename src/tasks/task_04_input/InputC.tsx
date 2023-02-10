@@ -1,12 +1,15 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 
-type InputType = {
-	addMessage: (title: string) => void
+type InputCtype = {
+	setTitle: (title: string) => void,
+	title: string
 }
 
-export const InputC = (): JSX.Element => {
-
+export const InputC: FC<InputCtype> = (props): JSX.Element => {
+	const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		props.setTitle(event.currentTarget.value);
+	}
 	return (
-		<input />
+		<input onChange={onChangeInputHandler} value={props.title} />
 	);
 }
