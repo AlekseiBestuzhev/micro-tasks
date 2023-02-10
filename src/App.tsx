@@ -3,6 +3,7 @@ import './App.css';
 import { CarsType, TaskMap } from './tasks/task_01_map/TaskMap';
 import { TaskButton } from './tasks/task_02_button/TaskButton';
 import { TaskFilter } from './tasks/task_03_filter/TaskFilter';
+import { TaskInput } from './tasks/task_04_input/TaskInput';
 
 function App() {
 	const topCars: CarsType[] = [
@@ -16,6 +17,7 @@ function App() {
 			<TaskMap top={topCars} />
 			<TaskButton />
 			<TaskFilter />
+			<TaskInput />
 		</div>
 	);
 }
