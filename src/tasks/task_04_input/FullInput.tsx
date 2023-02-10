@@ -11,6 +11,7 @@ export const FullInput: FC<FullInputType> = (props): JSX.Element => {
 	}
 	const onClickButtonHendler = () => {
 		props.addMessage(title);
+		setTitle('');
 	};
 	return (
 		<div>

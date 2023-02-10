@@ -11,16 +11,17 @@ export const TaskInput = () => {
 		const newMessage = { message: title };
 		setMessage([newMessage, ...message]);
 	}
-
+	const messageRender = message.map((elem, index) => {
+		return (
+			<div key={index}>{elem.message}</div>
+		)
+	})
 	return (
 		<div>
 			<h2 className='task'>Task 04. Input</h2>
 			<FullInput addMessage={addMessage} />
-			{message.map((elem, index) => {
-				return (
-					<div key={index}>{elem.message}</div>
-				)
-			})}
+
+			{messageRender}
 		</div>
 	);
 }
