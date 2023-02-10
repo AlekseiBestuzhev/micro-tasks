@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const FullInput = (): JSX.Element => {
+export const ButtonC = (): JSX.Element => {
 
 	return (
 		<button>+</button>

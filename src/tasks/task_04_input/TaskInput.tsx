@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FullInput } from './FullInput';
+import { ButtonC } from './ButtonC';
+import { InputC } from './InputC';
 
 export const TaskInput = () => {
 	const [message, setMessage] = useState([
@@ -19,8 +20,9 @@ export const TaskInput = () => {
 	return (
 		<div>
 			<h2 className='task'>Task 04. Input</h2>
-			<FullInput addMessage={addMessage} />
-
+			{/* <FullInput addMessage={addMessage} /> */}
+			<InputC />
+			<ButtonC />
 			{messageRender}
 		</div>
 	);

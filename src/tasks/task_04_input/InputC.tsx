@@ -4,7 +4,7 @@ type InputType = {
 	addMessage: (title: string) => void
 }
 
-export const FullInput: FC<InputType> = (props): JSX.Element => {
+export const InputC = (): JSX.Element => {
 
 	return (
 		<input />
