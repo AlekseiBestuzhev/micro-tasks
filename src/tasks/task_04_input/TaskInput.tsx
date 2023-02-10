@@ -8,8 +8,8 @@ export const TaskInput = () => {
 		{ message: 'message 3' },
 	]);
 	const addMessage = (title: string) => {
-		const newMessage = [...message, { message: title }];
-		setMessage(newMessage);
+		const newMessage = { message: title };
+		setMessage([newMessage, ...message]);
 	}
 
 	return (

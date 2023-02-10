@@ -9,10 +9,12 @@ export const FullInput: FC<FullInputType> = (props): JSX.Element => {
 	const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		setTitle(event.currentTarget.value);
 	}
-	const onClickButtonHendler = () => props.addMessage(title);
+	const onClickButtonHendler = () => {
+		props.addMessage(title);
+	};
 	return (
 		<div>
-			<input onChange={onChangeInputHandler} />
+			<input onChange={onChangeInputHandler} value={title} />
 			<button onClick={onClickButtonHendler}>+</button>
 		</div>
 	);
