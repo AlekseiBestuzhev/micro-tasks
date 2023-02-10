@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 
+type ButtonCtype = {
+	name: string,
+	callback: () => void
+}
 
-export const ButtonC = (): JSX.Element => {
-
+export const ButtonC: FC<ButtonCtype> = (props): JSX.Element => {
+	const onClickButtonHandler = () => {
+		props.callback();
+	}
 	return (
-		<button>+</button>
+		<button onClick={onClickButtonHandler}>{props.name}</button>
 	);
 }
