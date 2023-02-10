@@ -8,10 +8,10 @@ export const TaskInput = () => {
 		{ message: 'message 2' },
 		{ message: 'message 3' },
 	]);
-	const addMessage = (title: string) => {
-		const newMessage = { message: title };
-		setMessage([newMessage, ...message]);
-	}
+	// const addMessage = (title: string) => {
+	// 	const newMessage = { message: title };
+	// 	setMessage([newMessage, ...message]);
+	// }
 	const messageRender = message.map((elem, index) => {
 		return (
 			<div key={index}>{elem.message}</div>
