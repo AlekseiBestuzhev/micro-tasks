@@ -68,7 +68,8 @@ function TDLApp() {
 		// 	setTasks([...tasks]);
 	}
 
-	function changeFilter(value: FilterValuesType) {
+	function changeFilter(todolistID: string, value: FilterValuesType) {
+		setTodolists(todolists.map(list => list.id === todolistID ? { ...list, filter: value } : list));
 		// setFilter(value);
 	}
 
