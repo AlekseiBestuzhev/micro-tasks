@@ -77,6 +77,11 @@ function TDLApp() {
 		// setFilter(value);
 	}
 
+	function removeList(todolistID: string) {
+		setTodolists(todolists.filter(list => list.id !== todolistID));
+		delete tasks[todolistID]
+	}
+
 
 	return (
 		<div className="TDLApp">
@@ -99,6 +104,7 @@ function TDLApp() {
 						addTask={addTask}
 						changeTaskStatus={changeStatus}
 						filter={list.filter}
+						removeList={removeList}
 					/>
 				)
 			})}
