@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { FilterValuesType } from './TDLApp';
 
-type TaskType = {
+export type TaskType = {
 	id: string
 	title: string
 	isDone: boolean
@@ -14,7 +14,8 @@ type PropsType = {
 	changeFilter: (value: FilterValuesType) => void
 	addTask: (title: string) => void
 	changeTaskStatus: (taskId: string, isDone: boolean) => void
-	filter: FilterValuesType
+	filter: FilterValuesType,
+	todolistID: string
 }
 
 export function Todolist(props: PropsType) {

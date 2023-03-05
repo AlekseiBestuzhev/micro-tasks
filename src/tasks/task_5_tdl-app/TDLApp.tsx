@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import './App.css';
-import { Todolist } from './Todolist';
+import { TaskType, Todolist } from './Todolist';
 import { v1 } from 'uuid';
 
 export type FilterValuesType = "all" | "active" | "completed";
+
+export type TodolistsType = {
+	id: string,
+	title: string,
+	filter: FilterValuesType
+}
 
 function TDLApp() {
 
@@ -19,7 +24,7 @@ function TDLApp() {
 	let todolistID1 = v1();
 	let todolistID2 = v1();
 
-	let [todolists, setTodolists] = useState<Array<todolistsType>>([
+	let [todolists, setTodolists] = useState<Array<TodolistsType>>([
 		{ id: todolistID1, title: 'What to learn', filter: 'all' },
 		{ id: todolistID2, title: 'What to buy', filter: 'all' },
 	])
@@ -44,52 +49,61 @@ function TDLApp() {
 
 
 	function removeTask(id: string) {
-		let filteredTasks = tasks.filter(t => t.id != id);
-		setTasks(filteredTasks);
+		// let filteredTasks = tasks.filter(t => t.id != id);
+		// setTasks(filteredTasks);
 	}
 
 	function addTask(title: string) {
-		let task = { id: v1(), title: title, isDone: false };
-		let newTasks = [task, ...tasks];
-		setTasks(newTasks);
+		// let task = { id: v1(), title: title, isDone: false };
+		// let newTasks = [task, ...tasks];
+		// setTasks(newTasks);
 	}
 
 	function changeStatus(taskId: string, isDone: boolean) {
-		let task = tasks.find(t => t.id === taskId);
-		if (task) {
-			task.isDone = isDone;
-		}
+		// 	let task = tasks.find(t => t.id === taskId);
+		// 	if (task) {
+		// 		task.isDone = isDone;
+		// 	}
 
-		setTasks([...tasks]);
+		// 	setTasks([...tasks]);
 	}
 
 
-	let tasksForTodolist = tasks;
 
-	if (filter === "active") {
-		tasksForTodolist = tasks.filter(t => t.isDone === false);
-	}
-	if (filter === "completed") {
-		tasksForTodolist = tasks.filter(t => t.isDone === true);
-	}
+
+	// if (filter === "active") {
+	// 	tasksForTodolist = tasks.filter(t => t.isDone === false);
+	// }
+	// if (filter === "completed") {
+	// 	tasksForTodolist = tasks.filter(t => t.isDone === true);
+	// }
 
 	function changeFilter(value: FilterValuesType) {
-		setFilter(value);
+		// setFilter(value);
 	}
 
 
 	return (
-		<div className="App">
-			<Todolist title="What to learn"
-				tasks={tasksForTodolist}
-				removeTask={removeTask}
-				changeFilter={changeFilter}
-				addTask={addTask}
-				changeTaskStatus={changeStatus}
-				filter={filter}
-			/>
-		</div>
-	);
-}
+		<div className="TDLApp">
+			{todolists.map(list => {
+				let tasksForTodolist = tasks[list.id];
 
+				return (
+					<Todolist
+						key={list.id}
+						todolistID={list.id}
+						title={list.title}
+						tasks={tasksForTodolist}
+						removeTask={removeTask}
+						changeFilter={changeFilter}
+						addTask={addTask}
+						changeTaskStatus={changeStatus}
+						filter={list.filter}
+					/>
+				)
+			})}
+		</div>
+	)
+
+}
 export default TDLApp;
