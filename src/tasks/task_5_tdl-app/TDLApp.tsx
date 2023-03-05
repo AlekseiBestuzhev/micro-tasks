@@ -59,7 +59,8 @@ function TDLApp() {
 		// setTasks(newTasks);
 	}
 
-	function changeStatus(taskId: string, isDone: boolean) {
+	function changeStatus(todolistID: string, taskId: string, newIsDone: boolean) {
+		setTasks({ ...tasks, [todolistID]: tasks[todolistID].map(task => task.id === taskId ? { ...task, isDone: newIsDone } : task) })
 		// 	let task = tasks.find(t => t.id === taskId);
 		// 	if (task) {
 		// 		task.isDone = isDone;
