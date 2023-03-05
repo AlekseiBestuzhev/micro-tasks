@@ -53,7 +53,9 @@ function TDLApp() {
 		// setTasks(filteredTasks);
 	}
 
-	function addTask(title: string) {
+	function addTask(todolistID: string, title: string) {
+		let task = { id: v1(), title: title, isDone: false };
+		setTasks({ ...tasks, [todolistID]: [task, ...tasks[todolistID]] })
 		// let task = { id: v1(), title: title, isDone: false };
 		// let newTasks = [task, ...tasks];
 		// setTasks(newTasks);
