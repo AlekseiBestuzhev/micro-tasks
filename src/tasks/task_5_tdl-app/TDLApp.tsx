@@ -25,7 +25,7 @@ function TDLApp() {
 	let todolistID2 = v1();
 
 	let [todolists, setTodolists] = useState<Array<TodolistsType>>([
-		{ id: todolistID1, title: 'What to learn', filter: 'all' },
+		{ id: todolistID1, title: 'What to learn', filter: 'active' },
 		{ id: todolistID2, title: 'What to buy', filter: 'all' },
 	])
 
@@ -68,16 +68,6 @@ function TDLApp() {
 		// 	setTasks([...tasks]);
 	}
 
-
-
-
-	// if (filter === "active") {
-	// 	tasksForTodolist = tasks.filter(t => t.isDone === false);
-	// }
-	// if (filter === "completed") {
-	// 	tasksForTodolist = tasks.filter(t => t.isDone === true);
-	// }
-
 	function changeFilter(value: FilterValuesType) {
 		// setFilter(value);
 	}
@@ -87,7 +77,12 @@ function TDLApp() {
 		<div className="TDLApp">
 			{todolists.map(list => {
 				let tasksForTodolist = tasks[list.id];
-
+				if (list.filter === "active") {
+					tasksForTodolist = tasks[list.id].filter(t => t.isDone === false);
+				}
+				if (list.filter === "completed") {
+					tasksForTodolist = tasks[list.id].filter(t => t.isDone === true);
+				}
 				return (
 					<Todolist
 						key={list.id}
